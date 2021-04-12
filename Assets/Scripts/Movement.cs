@@ -6,6 +6,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     Rigidbody rocketBody;
+    AudioSource rocketAudio;
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 100f;
 
@@ -13,6 +14,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rocketBody = GetComponent<Rigidbody>();
+        rocketAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,12 +34,20 @@ public class Movement : MonoBehaviour
     }
 
     private void ApplyRotation(float rotationThisFrame) {
+        rocketBody.freezeRotation = true;
         transform.Rotate(Vector3.forward * Time.deltaTime * rotationThisFrame);
+        rocketBody.freezeRotation = false;
     }
 
     void ProcessThrust() {
         if (Input.GetKey(KeyCode.Space)) {
             rocketBody.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
+            if (!rocketAudio.isPlaying) {
+                rocketAudio.Play();
+            }
+        }
+        else {
+            rocketAudio.Stop();
         }
     }
 }
