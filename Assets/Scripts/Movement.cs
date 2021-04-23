@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    Rigidbody rocketBody;
-    AudioSource rocketAudio;
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 100f;
+    [SerializeField] AudioClip mainEngine;
+
+    Rigidbody rocketBody;
+    AudioSource rocketAudio;
+
+    public bool isTransitioning = false;
 
     // Start is called before the first frame 
     void Start()
@@ -17,11 +21,12 @@ public class Movement : MonoBehaviour
         rocketAudio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    //Update is called once per frame
     void Update()
     {
-        ProcessRotation();
-        ProcessThrust();
+            ProcessRotation();
+            ProcessThrust();
+            GetComponent<CollisionHandler>().enabled = false;
     }
 
     private void ProcessRotation() {
@@ -43,7 +48,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space)) {
             rocketBody.AddRelativeForce(Vector3.up * Time.deltaTime * mainThrust);
             if (!rocketAudio.isPlaying) {
-                rocketAudio.Play();
+                rocketAudio.PlayOneShot(mainEngine);
             }
         }
         else {
