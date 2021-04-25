@@ -7,6 +7,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] float invokeDelay = 1.5f;
     [SerializeField] AudioClip playerCrash;
     [SerializeField] AudioClip playerSuccess;
+    [SerializeField] ParticleSystem crashParticles;
+    [SerializeField] ParticleSystem successParticles;
 
     AudioSource rocketAudio;
     int currentLevel;
@@ -44,7 +46,8 @@ public class CollisionHandler : MonoBehaviour
 
 
     private void StartSuccessSequence() {
-        Debug.Log("Audio starting");
+        rocketAudio.Stop();
+        successParticles.Play();
         AudioSource.PlayClipAtPoint(playerSuccess, new Vector3(0, 0, 0));
         GetComponent<Movement>().enabled = false;
         if (currentLevel < maxLevel) {
@@ -56,6 +59,8 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void StartCrashSequence() {
+        rocketAudio.Stop();
+        crashParticles.Play();
         GetComponent<Movement>().enabled = false;
         rocketAudio.PlayOneShot(playerCrash, 0.3f);
         Invoke("LoadFirstLevel", invokeDelay);

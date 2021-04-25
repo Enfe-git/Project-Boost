@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 100f;
     [SerializeField] float rotationThrust = 100f;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
 
     Rigidbody rocketBody;
     AudioSource rocketAudio;
@@ -19,6 +22,7 @@ public class Movement : MonoBehaviour
     {
         rocketBody = GetComponent<Rigidbody>();
         rocketAudio = GetComponent<AudioSource>();
+        Debug.Log(40 * 41 / 2);
     }
 
     //Update is called once per frame
@@ -26,7 +30,6 @@ public class Movement : MonoBehaviour
     {
             ProcessRotation();
             ProcessThrust();
-            GetComponent<CollisionHandler>().enabled = false;
     }
 
     private void ProcessRotation() {
