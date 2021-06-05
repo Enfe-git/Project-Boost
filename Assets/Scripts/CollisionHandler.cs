@@ -15,6 +15,7 @@ public class CollisionHandler : MonoBehaviour
     int currentLevel;
     int maxLevel;
     bool isTransitioning = false;
+    bool collisionDisabled = false;
 
     private void Start() 
     {
@@ -22,11 +23,23 @@ public class CollisionHandler : MonoBehaviour
         currentLevel = SceneManager.GetActiveScene().buildIndex;
         maxLevel = SceneManager.sceneCountInBuildSettings - 1;
     }
-    
+
+    private void Update() {
+        RespondToDebugKeys();
+    }
+
+    private void RespondToDebugKeys() {
+        if (Input.GetKeyDown(KeyCode.L)) {
+            LoadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C)) {
+            collisionDisabled = !collisionDisabled;
+        }
+    }
 
     void OnCollisionEnter(Collision collision) 
     {
-        if (!isTransitioning) 
+        if (isTransitioning || collisionDisabled) { return; }
         {
             switch (collision.gameObject.tag) 
             {

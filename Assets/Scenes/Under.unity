@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 80a67ef1692524149bd87d2c82eebc2f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -251,8 +251,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0.004235921, b: 0.028301895, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -293,7 +293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.08312068, y: -0, z: -0, w: 0.99653953}
-  m_LocalPosition: {x: 7.982, y: 3.86, z: -13.54}
+  m_LocalPosition: {x: 7.784, y: 5.359, z: -15.235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3360056398494417466, guid: 677a504d05439964094f8ec7288dbb16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 22.22
       objectReference: {fileID: 0}
     - target: {fileID: 3360056398494417466, guid: 677a504d05439964094f8ec7288dbb16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936288401821997034, guid: 1eba612234bd7f543b2fce1ad8903eaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.42
       objectReference: {fileID: 0}
     - target: {fileID: 4936288401821997034, guid: 1eba612234bd7f543b2fce1ad8903eaa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -424,10 +424,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2558468860490621020, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296724, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -438,7 +434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296725, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.55
       objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296725, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_LocalPosition.y
