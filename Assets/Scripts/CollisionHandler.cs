@@ -44,7 +44,6 @@ public class CollisionHandler : MonoBehaviour
             switch (collision.gameObject.tag) 
             {
                 case "Friendly":
-                    Debug.Log("Object is friendly");
                     break;
                 case "Finish":
                     isTransitioning = true;
