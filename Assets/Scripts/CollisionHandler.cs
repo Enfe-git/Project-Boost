@@ -25,7 +25,9 @@ public class CollisionHandler : MonoBehaviour
     }
 
     private void Update() {
-        RespondToDebugKeys();
+        if (Debug.isDebugBuild) {
+            RespondToDebugKeys();
+        }
     }
 
     private void RespondToDebugKeys() {
@@ -75,12 +77,12 @@ public class CollisionHandler : MonoBehaviour
         rocketAudio.Stop();
         crashParticles.Play();
         GetComponent<Movement>().enabled = false;
-        rocketAudio.PlayOneShot(playerCrash, 0.3f);
+        rocketAudio.PlayOneShot(playerCrash, 0.15f);
         Invoke("LoadFirstLevel", invokeDelay);
     }
 
     private void LoadFirstLevel() {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(currentLevel);
     }
 
     void LoadNextLevel() {

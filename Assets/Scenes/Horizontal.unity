@@ -3193,7 +3193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4936288401821997034, guid: 1eba612234bd7f543b2fce1ad8903eaa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.56
+      value: -3.74
       objectReference: {fileID: 0}
     - target: {fileID: 4936288401821997034, guid: 1eba612234bd7f543b2fce1ad8903eaa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3240,6 +3240,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 15779113, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
+      propertyPath: mainThrust
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 15779113, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
+      propertyPath: rotationThrust
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296724, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_Name
       value: Rocket
@@ -3250,7 +3258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296725, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.47
+      value: -3.81
       objectReference: {fileID: 0}
     - target: {fileID: 3142584342354296725, guid: 532aff3c0f3073b4b903d894674ca1b5, type: 3}
       propertyPath: m_LocalPosition.y
